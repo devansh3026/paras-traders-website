@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Paras Traders - Tile Experts in Satna</title>
+  <style>
+    :root {
+      --primary-color: #d9a760;
+      --secondary-color: #2e3b4e;
+      --light-bg: #f8f9fa;
+      --dark-bg: #1c2533;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: var(--light-bg);
+    }
+    header {
+      background-color: var(--secondary-color);
+      color: white;
+      padding: 1.5rem;
+      text-align: center;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: var(--dark-bg);
+      flex-wrap: wrap;
+    }
+    nav a {
+      color: white;
+      padding: 1rem;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      background-color: #3d4d65;
+    }
+    section {
+      padding: 2rem;
+    }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+    }
+    .gallery img {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+    form {
+      max-width: 500px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    input, textarea {
+      padding: 0.75rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      padding: 0.75rem;
+      background-color: var(--secondary-color);
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #3d4d65;
+    }
+    .product-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+    .product-card {
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 1rem;
+      width: 200px;
+      text-align: center;
+      background-color: white;
+    }
+    .product-card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 5px;
+    }
+    .cart {
+      margin-top: 1rem;
+      text-align: center;
+    }
+    .cart ul {
+      list-style: none;
+      padding: 0;
+    }
+    .cart li {
+      margin-bottom: 0.5rem;
+    }
+    footer {
+      background-color: var(--secondary-color);
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+    @media (max-width: 600px) {
+      .product-card {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1 style="font-family: 'Georgia', serif; letter-spacing: 2px;">Paras Traders</h1>
+    <p>Your Trusted Tile Experts in Satna for 25 Years</p>
+  </header>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#products">Products</a>
+    <a href="#store">Online Store</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="about">
+    <h2>About Us</h2>
+    <p>Located in Khermai Road, Satna, Madhya Pradesh, Paras Traders has been serving customers for over 25 years with top-quality tiles and exceptional customer service. We cater to homeowners, contractors, and interior designers.</p>
+  </section>
+
+  <section id="products">
+    <h2>Our Products</h2>
+    <ul>
+      <li>Ceramic Tiles</li>
+      <li>Porcelain Tiles</li>
+      <li>Marble Tiles</li>
+    </ul>
+  </section>
+
+  <section id="store">
+    <h2>Online Store</h2>
+    <div class="product-grid">
+      <div class="product-card">
+        <img src="tile1.jpg" alt="Ceramic Tile">
+        <h3>Ceramic Tile</h3>
+        <p>₹250 / sq. ft</p>
+        <button onclick="addToCart('Ceramic Tile', 250)">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="tile2.jpg" alt="Porcelain Tile">
+        <h3>Porcelain Tile</h3>
+        <p>₹300 / sq. ft</p>
+        <button onclick="addToCart('Porcelain Tile', 300)">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="tile3.jpg" alt="Marble Tile">
+        <h3>Marble Tile</h3>
+        <p>₹450 / sq. ft</p>
+        <button onclick="addToCart('Marble Tile', 450)">Add to Cart</button>
+      </div>
+    </div>
+    <div class="cart">
+      <h3>Cart</h3>
+      <ul id="cart-items"></ul>
+      <p><strong>Total:</strong> ₹<span id="cart-total">0</span></p>
+    </div>
+  </section>
+
+  <section id="gallery">
+    <h2>Gallery</h2>
+    <div class="gallery">
+      <img src="tile1.jpg" alt="Tile Sample 1">
+      <img src="tile2.jpg" alt="Tile Sample 2">
+      <img src="tile3.jpg" alt="Tile Sample 3">
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p><strong>Address:</strong> Khermai Road, Satna, Madhya Pradesh 485001</p>
+    <p><strong>Email:</strong> parastraders@example.com</p>
+    <p><strong>Phone:</strong> +91-XXXXXXXXXX</p>
+
+    <h3>Request a Quote</h3>
+    <form action="#" method="post">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <input type="tel" name="phone" placeholder="Your Phone Number">
+      <textarea name="message" placeholder="Your Message or Requirements" rows="5" required></textarea>
+      <button type="submit">Send Request</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Paras Traders. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const cart = [];
+    function addToCart(product, price) {
+      cart.push({ product, price });
+      updateCart();
+    }
+
+    function updateCart() {
+      const cartItems = document.getElementById('cart-items');
+      const cartTotal = document.getElementById('cart-total');
+      cartItems.innerHTML = '';
+      let total = 0;
+      cart.forEach(item => {
+        const li = document.createElement('li');
+        li.textContent = `${item.product} - ₹${item.price}`;
+        cartItems.appendChild(li);
+        total += item.price;
+      });
+      cartTotal.textContent = total;
+    }
+  </script>
+</body>
+</html>
+
